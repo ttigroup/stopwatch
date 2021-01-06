@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+  }
+  body {
+    margin:20px 10px;
+     padding:0px;
+    text-align:center;   
+}
+  form{
+
+    margin-right: auto;
+margin-left: auto;
+    display: block;
+    text-align: center;
+  }
+  table{
+    margin: 0 auto;  
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+    /* border: 1px solid purple; */
+  }
+th,tr,td{
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  input{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding:3px;
+    overflow: hidden;
+    text-align: center;
+    padding:3px;
+  }
+  #tencondoan{
+    margin-left: 5px !important;
+  }
+label{
+    text-align: left; 
+    margin-left:10px;     
+   } 
+   .congdoan{
+     text-align:left;
+      margin-top: 10px;
+      margin-bottom:10px;  
+      width: 100%;
+      /* border: 1px solid darkcyan; */
+   } 
+   .tencondoan{
+    text-align:left;
+    width: 96%;
+    overflow: hidden;
+   }
+  .stopwatch {
+    display: inline-block;
+    background-color: white;
+    padding: 5px;
+    margin-left: auto;
+   margin-right: auto; 
+   margin-top: auto;
+   margin-bottom: 10px;  
+    border: 2px solid darkcyan;  
+    width: 300px;
+    height: 130px;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .stopwatch span {
+    font-weight: bold;
+    display: block;
+    border: 1px solid darkcyan;
+    width: 300px;
+    height: 50px;
+    line-height:50px;
+    font-weight: bold;
+    font-size:40px; 
+    margin-top: 10px;
+    margin-bottom:10px ;
+    text-align: center;  
+  }
+  .stopwatch a {
+    padding-right: 5px;
+    text-decoration: none;
+    border: 1px solid black;
+    width: 90px;
+    height: 50px;
+    margin:0.7rem;
+    padding:0.3rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color:darkcyan;
+    color:white;
+    border: 1px darkcyan;
+    border-radius:20px
+    }
+    .stopwatch a:hover{
+      background-color:tomato;
+      color:white;
+    }
+    #btn{
+      width: 150px;
+      height: 50px;
+      background-color:darkcyan;
+      color:white;
+      font-size:25px;
+      font-weight: bold;
+      border-radius: 25px;
+      border: none;
+      box-shadow: none;
+      margin-bottom:10px;
+    }
+    #btn:hover{
+      background-color:tomato;
+      color:white;
+    }
+    a{
+      text-align: center;
+      font-weight: bold;
+      font-size:20px;
+      color:purple;
+    }
+      
+</style>
+
+<body>
+  <form id="stopwatch1">
+    <table class="center"> 
+      <tr>
+        <th colspan="3">
+          <div id="watchgroup">
+            <span class="basic stopwatch" name="" id="screen1">STOPWATCH</span>
+        </th>
+      </tr>         
+      <tr>
+        <td><input type="text" id="watch1" name="BẤM GIỜ 1" onfocus="this.value=''" /></td>
+        <td><input type="text" id="watch2" name="BẤM GIỜ 2" onfocus="this.value=''" /></td>
+        <td><input type="text" id="watch3" name="BẤM GIỜ 3" onfocus="this.value=''" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="watch4" name="BẤM GIỜ 4" onfocus="this.value=''" /></td>
+        <td><input type="text" id="watch5" name="BẤM GIỜ 5" onfocus="this.value=''" /></td>
+        <td><input type="text" id="watch6" name="BẤM GIỜ 6" onfocus="this.value=''" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="watch7" name="BẤM GIỜ 7" onfocus="this.value=''" /></td>
+        <td><input type="text" id="watch8" name="BẤM GIỜ 8" onfocus="this.value=''" /></td>
+        <td><input type="text" id="watch9" name="BẤM GIỜ 9" onfocus="this.value=''" /></td>
+      </tr>
+    </table>
+    <!-- <div id="watchgroup">
+        <span class="basic stopwatch" name="" id="screen1"
+          >Watch 1</span
+        > -->
+    <!-- <span class="basic stopwatch" name="" id="screen2"
+          >Watch 2</span
+        >
+        <span class="basic stopwatch" name="" id="screen3"
+          >Watch 3</span
+        >
+        <span class="basic stopwatch" name="" id="screen4"
+          >Watch 4</span
+        >
+        <span class="basic stopwatch" name="" id="screen5"
+          >Watch 5</span
+        >
+        <span class="basic stopwatch" name="" id="screen6"
+          >Watch 6</span
+        >
+        <span class="basic stopwatch" name="" id="screen7"
+          >Watch 7</span
+        >
+        <span class="basic stopwatch" name="" id="screen8"
+          >Watch 8</span
+        >
+        <span class="basic stopwatch" name="" id="screen9"
+          >Watch 9</span
+        > -->
+    <!-- </div> -->
+    <div class="congdoan">
+      <label for="">Nhập tên công đoạn</label>
+      <input type="text" id="tencondoan"  class="tencondoan" name="TÊN CÔNG ĐOẠN" onfocus="this.value=''" />
+    </div>
+
+  </form>
+  <div id="message" style="
+        display: none;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 auto;
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+        background-color: #34eb71;
+        color: black;
+        margin-bottom: 15px;
+      ">
+    Data have been sent to cloud.
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <button type="text" id="btn">Sent</button>
+    </div>
+  </div>
+  <div class="row">
+    <a href="https://docs.google.com/spreadsheets/d/1oD9rqmqoGIlczAX0f31jTD0uKmbe9newilfqtBrFCsA/edit?usp=sharing">Xem kết quả</a>
+  </div>
+  <script>
+    // stopwatch functions...
+    var Stopwatch = function (elem, options) {
+      var timer = createTimer(),
+        startButton = createButton("Start", start),
+        stopButton = createButton("Stop", stop),
+        resetButton = createButton("Reset", reset),
+        offset,
+        clock,
+        interval;
+
+      // default options
+      options = options || {};
+      options.delay = options.delay || 1;
+
+      // append elements
+      elem.appendChild(timer);
+      elem.appendChild(startButton);
+      elem.appendChild(stopButton);
+      elem.appendChild(resetButton);
+
+      // initialize
+      reset();
+
+      // private functions
+      function createTimer() {
+        return document.createElement("span");
+      }
+
+      function createButton(action, handler) {
+        var a = document.createElement("a");
+        a.href = "#" + action;
+        a.innerHTML = action;
+        a.addEventListener("click", function (event) {
+          handler();
+          event.preventDefault();
+        });
+        return a;
+      }
+
+      function start() {
+        if (!interval) {
+          offset = Date.now();
+          interval = setInterval(update, options.delay);
+        }
+      }
+
+      function stop() {
+        if (interval) {
+          clearInterval(interval);
+          interval = null;
+          console.log(clock);
+          if (document.getElementById("watch1").value == "") {
+            document.getElementById("watch1").value = Math.ceil(clock / 1000);
+          }
+          else if (document.getElementById("watch2").value == "") {
+            document.getElementById("watch2").value = Math.ceil(clock / 1000);
+          }
+          else if (document.getElementById("watch3").value == "") {
+            document.getElementById("watch3").value = Math.ceil(clock / 1000);
+          }
+          else if (document.getElementById("watch4").value == "") {
+            document.getElementById("watch4").value = Math.ceil(clock / 1000);
+          }
+          else if (document.getElementById("watch5").value == "") {
+            document.getElementById("watch5").value = Math.ceil(clock / 1000);
+          }
+          else if (document.getElementById("watch6").value == "") {
+            document.getElementById("watch6").value = Math.ceil(clock / 1000);
+          }
+          else if (document.getElementById("watch7").value == "") {
+            document.getElementById("watch7").value = Math.ceil(clock / 1000);
+          }
+          else if (document.getElementById("watch8").value == "") {
+            document.getElementById("watch8").value = Math.ceil(clock / 1000);
+          }
+          else if (document.getElementById("watch9").value == "") {
+            document.getElementById("watch9").value = Math.ceil(clock / 1000);
+          }
+        }
+      }
+
+      function reset() {
+        clock = 0;
+        render(0);
+      }
+
+      function update() {
+        clock += delta();
+        render();
+      }
+
+      function render() {
+        var h = Math.floor(clock / (1000 * 60 * 60)) % 24;
+        var m = Math.floor(clock / (1000 * 60)) % 60;
+        var s = Math.floor(clock / 1000) % 60;
+        var ms = Math.floor(clock % 1000);
+
+        if (h < 10) {
+          h = "0" + h;
+        }
+        if (m < 10) {
+          m = "0" + m;
+        }
+        if (s < 10) {
+          s = "0" + s;
+        }
+        if (ms < 100) {
+          ms = "0" + ms;
+        }
+        if (ms < 10) {
+          ms = "0" + ms;
+        }
+        timer.innerHTML = h + ":" + m + ":" + s + "::" + ms;
+      }
+
+      function delta() {
+        var now = Date.now(),
+          d = now - offset;
+
+        offset = now;
+        return d;
+      }
+
+      this.start = start;
+      this.stop = stop;
+      this.reset = reset;
+    };
+    var elems = document.getElementsByClassName("basic");
+    for (var i = 0, len = elems.length; i < len; i++) {
+      new Stopwatch(elems[i]);
+    }
+    //click one btn, stop all other watch
+    // $('#btngroup button').live('click', function() {
+    //   var btnClicked = $(this).index();
+    //   $('.basic').each(function(index) {
+    //     if(btnClicked == index){
+    //       $(this).find('a:eq(0)')[0].click();
+    //     } else {
+    //       $(this).find('a:eq(1)')[0].click();
+    //     }
+    //   });
+    // });
+    //Ajax
+    var $form = $("form#stopwatch1"),
+      url =
+        "https://script.google.com/macros/s/AKfycbwzq5k2bs89iJS3tmlnoxeYzdtFh4OaHOYxEiv55onUpP5CYyny/exec";
+
+    $("#btn").on("click", function (e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form.serializeArray(),
+      }).success;
+      // do something
+      $(document).ready(function () {
+        $(document).ready(function () {
+          // var newText = $("#myInput").val().split(" ");
+          $("#message").fadeIn("slow", function () {
+            $("#message").delay(5000).fadeOut();
+          });
+        });
+      });
+      console.log("sent thanh cong")();
+    });
+    $('#btn1').click(function () {
+      console.log(Stopwatch.clock)
+
+    });
+  </script>
+</body>
+
+</html>
