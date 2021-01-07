@@ -13,6 +13,17 @@
     padding: 0;
     /* border: 1px solid red; */
   }
+  @media screen and (min-width: 800px) {
+    form{
+    margin: 0 auto;  
+    width: 50%;    
+    text-align: center;
+    /* border: 1px solid purple; */
+  }
+  }
+h1{
+  text-align: center;
+}
   body {
     margin:20px 10px;
      padding:0px;
@@ -88,7 +99,7 @@ label{
     height: 100px;
     line-height:100px;
     font-weight: bold;
-    font-size:40px; 
+    font-size:50px; 
     margin-top: 10px;
     margin-bottom:10px ;
     text-align: center;  
@@ -139,6 +150,9 @@ label{
 
 <body>
   <form id="stopwatch1">
+    <div>
+      <h1>Time Study</h1>
+    </div>
     <table class="center">               
       <tr>
         <td><input type="text" id="watch1" name="BẤM GIỜ 1" onfocus="this.value=''" /></td>
@@ -386,10 +400,10 @@ label{
       });
       console.log("sent thanh cong")();
     });
-    $('#btn1').click(function () {
-      console.log(Stopwatch.clock)
+    // $('#btn1').click(function () {
+    //   console.log(Stopwatch.clock)
 
-    });
+    // });
   </script>
 </body>
 
