@@ -15,7 +15,7 @@
   * {
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
+   box-sizing: border-box;
   }
 
   body {
@@ -34,10 +34,10 @@
 
   table {
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
     table-layout: fixed;
     text-align: center;
-    /* border: 1px solid purple; */
+    background-color: white;
   }
 
   th,
@@ -59,8 +59,10 @@
     padding: 3px;
   }
 
-  #tencondoan {
-    margin-left: 5px !important;
+  #tencondoan{
+   margin-left: auto;
+   margin-right: auto;
+    width: 100%;
   }
 
   label {
@@ -95,20 +97,24 @@
     height: 250px;
     font-size: 1.3rem;
     font-weight: bold;
+    background-color: #c2c4bc;
   }
 
   .stopwatch span {
     font-weight: bold;
     display: block;
     border: 1px solid darkcyan;
-    width: 370px;
+    width: 350px;
     height: 150px;
     line-height: 150px;
     font-weight: bold;
     font-size: 50px;
     margin-top: 10px;
     margin-bottom: 10px;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;  
+    background-color: white;  
   }
 
   .stopwatch a {
@@ -163,14 +169,33 @@
   }
   #tenmodel{
     text-align: left;
+    margin-left: auto;
+   margin-right: auto;
+    width: 100%;
   }
+
+  @media screen and (max-width: 640px) {
+ /* form{
+   width: 70%;
+ } */
+ body {
+    background-color: white;
+  }
+}
+@media screen and (min-width: 640px) {
+ 
+  form{
+   width: 70%;
+   background-color:#f3f5ed;
+ }
+}
 </style>
 
 <body>
   <form id="stopwatch1">
     <h1>Time Study</h1>
     <div class="congdoan">
-      <label for="">Nhập Model</label>
+      <label for="">Type model number</label>
       <input type="text" id="tenmodel" class="tenmodel" name="Model" />
     </div>
     <table class="center">      
@@ -191,37 +216,9 @@
       </tr>
 
     </table>
-    <!-- <div id="watchgroup">
-        <span class="basic stopwatch" name="" id="screen1"
-          >Watch 1</span
-        > -->
-    <!-- <span class="basic stopwatch" name="" id="screen2"
-          >Watch 2</span
-        >
-        <span class="basic stopwatch" name="" id="screen3"
-          >Watch 3</span
-        >
-        <span class="basic stopwatch" name="" id="screen4"
-          >Watch 4</span
-        >
-        <span class="basic stopwatch" name="" id="screen5"
-          >Watch 5</span
-        >
-        <span class="basic stopwatch" name="" id="screen6"
-          >Watch 6</span
-        >
-        <span class="basic stopwatch" name="" id="screen7"
-          >Watch 7</span
-        >
-        <span class="basic stopwatch" name="" id="screen8"
-          >Watch 8</span
-        >
-        <span class="basic stopwatch" name="" id="screen9"
-          >Watch 9</span
-        > -->
-    <!-- </div> -->
+    
     <div class="congdoan">
-      <label for="">Nhập tên công đoạn</label>
+      <label for="">Type process name</label>
       <input type="text" id="tencondoan" class="tencondoan" name="TÊN CÔNG ĐOẠN" />
     </div>
 
@@ -252,7 +249,7 @@
   </div>
   <div class="row">
     <a href="https://docs.google.com/spreadsheets/d/1oD9rqmqoGIlczAX0f31jTD0uKmbe9newilfqtBrFCsA/edit?usp=sharing">Xem
-      kết quả</a>
+      Go to database</a>
   </div>
   <script>
     // stopwatch functions...
